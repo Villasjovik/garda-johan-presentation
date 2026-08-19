@@ -1,0 +1,1363 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gårda Johan × Villa Sjövik — Samarbete över tid</title>
+<meta name="description" content="Ett förslag byggt på Gårda Johans eget årshjul: åtta kampanjer, två format, ett år. Sex eller tolv månader.">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gårda Johan × Villa Sjövik">
+<meta property="og:description" content="Ert årshjul har åtta kampanjer. Det här är förslaget som ligger ovanpå det, vecka för vecka.">
+<meta property="og:url" content="https://villasjovik.github.io/garda-johan-presentation/">
+<meta property="og:image" content="https://villasjovik.github.io/garda-johan-presentation/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gårda Johan × Villa Sjövik">
+<meta name="twitter:description" content="Ert årshjul har åtta kampanjer. Det här är förslaget som ligger ovanpå det, vecka för vecka.">
+<meta name="twitter:image" content="https://villasjovik.github.io/garda-johan-presentation/og-image.png">
+<meta name="theme-color" content="#0E1109">
+<link rel="icon" href="favicon.png" type="image/png" sizes="192x192">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/familjen-roman-latin.woff2" crossorigin>
+<link rel="preload" as="image" href="assets/img/hero-plate.webp">
+<style>
+/* ---------------------------------------------------------------- fonts */
+@font-face{font-family:'Familjen';font-style:normal;font-weight:400 700;font-display:swap;
+  src:url(assets/fonts/familjen-roman-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Familjen';font-style:normal;font-weight:400 700;font-display:swap;
+  src:url(assets/fonts/familjen-roman-latinext.woff2) format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Familjen';font-style:italic;font-weight:400 700;font-display:swap;
+  src:url(assets/fonts/familjen-italic-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Familjen';font-style:italic;font-weight:400 700;font-display:swap;
+  src:url(assets/fonts/familjen-italic-latinext.woff2) format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+
+/* ------------------------------------- houdini: animerbara custom props */
+@property --pb-float{syntax:'<length>';inherits:false;initial-value:0px}
+@property --pb-hover{syntax:'<length>';inherits:false;initial-value:0px}
+@property --pb-rot{syntax:'<angle>';inherits:false;initial-value:0deg}
+@property --pb-entry{syntax:'<length>';inherits:false;initial-value:0px}
+@property --pb-scale{syntax:'<number>';inherits:false;initial-value:1}
+@property --pr-damp{syntax:'<number>';inherits:true;initial-value:1}
+@property --sp-float{syntax:'<length>';inherits:false;initial-value:0px}
+@property --sp-hover{syntax:'<length>';inherits:false;initial-value:0px}
+@property --sp-rx{syntax:'<angle>';inherits:false;initial-value:0deg}
+@property --sp-ry{syntax:'<angle>';inherits:false;initial-value:0deg}
+
+/* --------------------------------------------------------------- tokens */
+:root{
+  --ink:#0E1109;
+  --ink-2:#141810;
+  --ink-3:#1A1F13;
+  --rule:#2C3320;
+  --rule-soft:#1E2416;
+  --paper:#ECEADF;
+  --paper-dim:#A3A694;
+  --paper-faint:#83876F;
+  --moss:#4E5636;
+  --moss-lit:#71804D;
+  --gold:#F3B547;
+  --gold-soft:#FBD98F;
+  --gut:clamp(1.25rem,4.4vw,4.5rem);
+  --band:clamp(5rem,12vh,9.5rem);
+  --ease:cubic-bezier(.16,1,.3,1);
+  --back:cubic-bezier(.34,1.56,.64,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;overflow-x:clip}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{
+  margin:0;background:var(--ink);color:var(--paper);
+  font-family:'Familjen',system-ui,-apple-system,sans-serif;font-weight:400;
+  font-size:clamp(1rem,.94rem + .28vw,1.125rem);line-height:1.62;
+  letter-spacing:-.005em;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+img{max-width:100%;height:auto;display:block}
+::selection{background:rgba(243,181,71,.3);color:var(--paper)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:2px}
+
+/* --------------------------------------------------- atmosfär: orbs + grain */
+.atmos{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.6}
+.orb-1{width:560px;height:560px;background:radial-gradient(circle,rgba(113,128,77,.3),transparent 70%);
+  top:-14%;right:-8%;animation:orbA 30s ease-in-out infinite}
+.orb-2{width:480px;height:480px;background:radial-gradient(circle,rgba(243,181,71,.13),transparent 70%);
+  top:52%;left:-10%;animation:orbB 26s ease-in-out infinite;animation-delay:-9s}
+.orb-3{width:400px;height:400px;background:radial-gradient(circle,rgba(78,86,54,.34),transparent 70%);
+  bottom:-8%;right:14%;animation:orbA 34s ease-in-out infinite;animation-delay:-15s}
+@keyframes orbA{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-44px,58px,0) scale(1.1)}}
+@keyframes orbB{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(56px,-46px,0) scale(1.08)}}
+.grain{position:fixed;inset:-110%;z-index:60;pointer-events:none;opacity:.045;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grainShift 7s steps(6) infinite}
+@keyframes grainShift{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}
+  60%{transform:translate(-2%,-2%)}80%{transform:translate(3%,1%)}100%{transform:translate(0,0)}}
+.page{position:relative;z-index:1}
+
+/* -------------------------------------------------------------- curtain */
+.curtain{position:fixed;inset:0;z-index:100;background:var(--ink);display:grid;place-items:center;
+  transition:opacity .75s var(--ease),visibility .75s}
+.curtain::after{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 50% at 50% 50%,rgba(78,86,54,.3),transparent 70%)}
+.curtain__in{position:relative;z-index:2;display:flex;align-items:center;gap:clamp(1.4rem,4vw,3.2rem);
+  opacity:0;animation:curtIn 1s var(--ease) .12s forwards}
+.curtain__in img:first-child{width:clamp(100px,13vw,158px)}
+.curtain__in img:last-child{width:clamp(88px,11vw,132px)}
+.curtain__x{width:1px;height:clamp(38px,6vw,64px);background:linear-gradient(180deg,transparent,var(--gold),transparent)}
+.curtain__bar{position:absolute;left:50%;bottom:clamp(3rem,12vh,7rem);transform:translateX(-50%);
+  width:clamp(120px,18vw,220px);height:1px;background:var(--rule);overflow:hidden;z-index:2}
+.curtain__bar i{position:absolute;inset:0;background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  transform:translateX(-100%);animation:curtBar 1.5s var(--ease) infinite}
+@keyframes curtIn{to{opacity:1}}
+@keyframes curtBar{to{transform:translateX(100%)}}
+.curtain.gone{opacity:0;visibility:hidden}
+
+/* --------------------------------------------------------------- layout */
+.wrap{max-width:1560px;margin:0 auto;padding-inline:var(--gut)}
+.band{padding-block:var(--band);position:relative}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(1rem,2.2vw,2.5rem)}
+.tint{background:linear-gradient(180deg,rgba(20,24,16,0),rgba(20,24,16,.85) 12%,rgba(20,24,16,.85) 88%,rgba(20,24,16,0));
+  border-block:1px solid var(--rule-soft)}
+
+/* ----------------------------------------------------------- typography */
+h1,h2,h3{margin:0;font-weight:400;letter-spacing:-.03em;line-height:1.03;text-wrap:balance}
+.display{font-size:clamp(2.4rem,6.6vw,5.4rem)}
+.h2{font-size:clamp(1.85rem,4.2vw,3.4rem);line-height:1.06}
+.h3{font-size:clamp(1.35rem,2.6vw,2.1rem);line-height:1.12;letter-spacing:-.028em}
+.lead{font-size:clamp(1.06rem,.98rem + .5vw,1.45rem);line-height:1.5;letter-spacing:-.012em;color:var(--paper-dim);max-width:36ch}
+.voice{font-style:italic;font-size:clamp(1.15rem,1rem + .9vw,1.8rem);line-height:1.47;letter-spacing:-.018em;max-width:32ch}
+.prose{max-width:62ch;color:var(--paper-dim)}
+.prose p+p{margin-top:1.05em}
+.prose strong{color:var(--paper);font-weight:500}
+.label{font-size:.6875rem;line-height:1.3;font-weight:500;text-transform:uppercase;letter-spacing:.3em;color:var(--paper-faint)}
+.num{font-variant-numeric:tabular-nums lining-nums}
+.marginal{font-size:.6875rem;letter-spacing:.12em;font-weight:500;color:var(--gold);font-variant-numeric:tabular-nums;margin:0}
+.caption{font-size:.8125rem;line-height:1.5;color:var(--paper-faint);letter-spacing:0;max-width:52ch}
+em.soft{color:var(--gold-soft);font-style:italic}
+.eyebrow{display:inline-flex;align-items:center;gap:.85rem;margin-bottom:1.15rem}
+.eyebrow::after{content:'';width:clamp(26px,3vw,46px);height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+
+/* -------------------------------------------------------------- reveals */
+.js .rv{opacity:0;transform:translateY(20px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv-stagger>*{opacity:0;transform:translateY(15px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .rv-stagger.in>*{opacity:1;transform:none}
+.js .rv-stagger.in>*:nth-child(1){transition-delay:.03s}
+.js .rv-stagger.in>*:nth-child(2){transition-delay:.09s}
+.js .rv-stagger.in>*:nth-child(3){transition-delay:.15s}
+.js .rv-stagger.in>*:nth-child(4){transition-delay:.21s}
+.js .rv-stagger.in>*:nth-child(5){transition-delay:.27s}
+.js .rv-stagger.in>*:nth-child(6){transition-delay:.33s}
+.js .rv-stagger.in>*:nth-child(7){transition-delay:.39s}
+.js .rv-stagger.in>*:nth-child(8){transition-delay:.45s}
+.js .rv-stagger.in>*:nth-child(9){transition-delay:.51s}
+.js .rv-stagger.in>*:nth-child(10){transition-delay:.57s}
+.js .rv-plate{clip-path:inset(0 0 100% 0);transition:clip-path 1.15s var(--ease)}
+.js .rv-plate.in{clip-path:inset(0 0 0 0)}
+
+/* ------------------------------------------------------------ gold rail */
+.rail{position:fixed;top:0;bottom:0;left:clamp(10px,1.4vw,22px);width:2px;background:var(--rule);z-index:40;pointer-events:none}
+.rail__fill{position:absolute;inset:0;transform:scaleY(var(--p,0));transform-origin:top;
+  background:linear-gradient(180deg,rgba(243,181,71,.2),rgba(243,181,71,.66) 55%,var(--gold))}
+.rail__glow{position:absolute;left:-11px;width:24px;height:104px;top:0;
+  transform:translateY(calc(var(--p,0) * (100vh - 104px)));opacity:.45;
+  background:radial-gradient(closest-side,rgba(243,181,71,.55),rgba(243,181,71,0));filter:blur(7px)}
+@media (max-width:980px){
+  .rail{top:0;bottom:auto;left:0;right:0;width:auto;height:2px}
+  .rail__fill{transform:scaleX(var(--p,0));transform-origin:left;
+    background:linear-gradient(90deg,rgba(243,181,71,.2),rgba(243,181,71,.66) 55%,var(--gold))}
+  .rail__glow{left:0;top:-11px;width:104px;height:24px;transform:translateX(calc(var(--p,0) * (100vw - 104px)))}
+}
+
+/* -------------------------------------------------------------- sidenav */
+.snav{position:fixed;right:clamp(14px,1.8vw,30px);top:50%;transform:translateY(-50%);z-index:45;
+  display:flex;flex-direction:column;gap:.85rem;align-items:flex-end}
+.snav a{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--paper-faint);
+  font-size:.625rem;letter-spacing:.2em;text-transform:uppercase;transition:color .4s var(--ease)}
+.snav span{opacity:0;transform:translateX(6px);white-space:nowrap;pointer-events:none;
+  background:rgba(14,17,9,.9);border:1px solid var(--rule-soft);border-radius:999px;padding:.28rem .7rem;
+  transition:opacity .4s var(--ease),transform .4s var(--ease)}
+.snav i{width:7px;height:7px;border-radius:50%;border:1px solid var(--rule);flex:none;
+  transition:background .45s var(--ease),border-color .45s var(--ease),transform .45s var(--ease),box-shadow .45s var(--ease)}
+.snav a:hover{color:var(--paper)}
+.snav a:hover span{opacity:1;transform:none}
+.snav a:hover i{border-color:var(--moss-lit)}
+.snav a.on{color:var(--gold)}
+.snav a.on i{background:var(--gold);border-color:var(--gold);transform:scale(1.25);box-shadow:0 0 0 4px rgba(243,181,71,.15)}
+@media (max-width:1440px){.snav{display:none}}
+
+/* ------------------------------------------------------------- masthead */
+.masthead{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;
+  gap:1.5rem;padding-block:clamp(1.15rem,2.6vh,2rem);border-bottom:1px solid var(--rule-soft)}
+.gj-logo{width:clamp(78px,9vw,116px)}
+.vs-logo{width:clamp(74px,8.2vw,102px);opacity:.92}
+
+/* ----------------------------------------------------------------- hero */
+.hero{position:relative;min-height:min(calc(100svh - 7rem),920px);display:flex;align-items:flex-end;
+  padding-block:clamp(3rem,9vh,6rem) clamp(2.25rem,6vh,4rem)}
+.hero__plate{position:absolute;inset:0 0 0 auto;width:min(54%,880px);overflow:hidden}
+.hero__plate img{width:100%;height:100%;object-fit:cover;object-position:56% 76%;
+  transform:scale(1.07);transition:transform 1.8s var(--ease)}
+.hero.in .hero__plate img{transform:scale(1)}
+.hero__plate::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,var(--ink) 0%,rgba(14,17,9,.84) 26%,rgba(14,17,9,.12) 72%,rgba(14,17,9,.44) 100%)}
+.hero__inner{position:relative;z-index:2;width:100%}
+.hero h1{grid-column:1/span 8}
+.hero .lead{grid-column:1/span 5;margin:clamp(1.4rem,3vh,2.4rem) 0 0}
+.hero__meta{grid-column:1/span 8;display:flex;flex-wrap:wrap;gap:.6rem clamp(1rem,2.6vw,2.4rem);
+  margin-top:clamp(2rem,5vh,3.4rem);padding-top:1.1rem;border-top:1px solid var(--rule-soft)}
+@media (max-width:900px){
+  .hero__plate{width:100%;opacity:.4}
+  .hero__plate::after{background:linear-gradient(180deg,rgba(14,17,9,.74),rgba(14,17,9,.92))}
+  .hero h1,.hero .lead,.hero__meta{grid-column:1/-1}
+}
+
+/* -------------------------------------------------------------- marquee */
+.mq{position:relative;border-block:1px solid var(--rule-soft);padding-block:clamp(1.4rem,3vh,2.2rem);
+  overflow:hidden;background:rgba(20,24,16,.55)}
+.mq__track{display:flex;align-items:center;gap:clamp(2.5rem,6vw,6rem);width:max-content;
+  animation:mqRun 46s linear infinite}
+.mq:hover .mq__track{animation-play-state:paused}
+.mq img{height:clamp(17px,2vw,25px);width:auto;opacity:.4;filter:brightness(0) invert(1);
+  transition:opacity .45s var(--ease)}
+.mq img:hover{opacity:.9}
+.mq::before,.mq::after{content:'';position:absolute;top:0;bottom:0;width:clamp(40px,8vw,140px);z-index:2;pointer-events:none}
+.mq::before{left:0;background:linear-gradient(90deg,var(--ink),transparent)}
+.mq::after{right:0;background:linear-gradient(270deg,var(--ink),transparent)}
+@keyframes mqRun{to{transform:translateX(-50%)}}
+
+/* ------------------------------------------------------------ statement */
+.statement .voice{grid-column:1/span 6}
+.statement .sig{grid-column:9/span 4;align-self:end}
+@media (max-width:900px){.statement .voice,.statement .sig{grid-column:1/-1}.statement .sig{margin-top:2.5rem}}
+
+/* ================================ FLYTANDE KORT (canonical .sp-c-register) */
+.card{
+  --sp-float:0px;--sp-hover:0px;
+  position:relative;border:1px solid var(--rule);border-radius:20px;
+  background:linear-gradient(150deg,rgba(113,128,77,.1) 0%,rgba(113,128,77,.02) 55%,rgba(243,181,71,.04) 100%),rgba(20,24,16,.72);
+  box-shadow:0 24px 60px rgba(0,0,0,.45),0 8px 18px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);
+  transform-style:preserve-3d;transform-origin:50% 55%;
+  transform:rotateY(var(--sp-ry,0deg)) rotateX(var(--sp-rx,0deg)) translate3d(0,calc(var(--sp-float) + var(--sp-hover)),0);
+  animation:spFloat 11s cubic-bezier(.45,.05,.55,.95) infinite;will-change:transform;
+  transition:border-color .35s,box-shadow .4s var(--ease),--sp-hover .55s var(--ease),
+             --sp-rx .5s var(--ease),--sp-ry .5s var(--ease);
+}
+/* guldtråd som sveper längs överkanten + topp-glow */
+.card::before{content:'';position:absolute;inset:0;border-radius:20px;pointer-events:none;z-index:0;
+  background:
+    linear-gradient(90deg,rgba(243,181,71,.16),var(--gold),rgba(243,181,71,.16)),
+    radial-gradient(ellipse 120% 60% at 50% -10%,rgba(251,217,143,.1),transparent 55%);
+  background-size:300% 1px,100% 100%;background-position:130% 0,0 0;background-repeat:no-repeat;
+  animation:cardEdge 9s var(--ease) infinite}
+@keyframes cardEdge{0%,60%{background-position:130% 0,0 0}95%,100%{background-position:-190% 0,0 0}}
+/* muspekar-glow */
+.card::after{content:'';position:absolute;inset:0;border-radius:20px;pointer-events:none;z-index:0;
+  opacity:0;transition:opacity .5s var(--ease);
+  background:radial-gradient(340px circle at var(--mx,50%) var(--my,50%),rgba(243,181,71,.09),transparent 62%)}
+.card:hover::after{opacity:1}
+.card:hover{border-color:rgba(113,128,77,.55);--sp-hover:-8px;
+  box-shadow:0 40px 90px rgba(0,0,0,.55),0 14px 28px rgba(0,0,0,.38),inset 0 1px 0 rgba(255,255,255,.09)}
+.card>*{position:relative;z-index:1}
+@keyframes spFloat{0%{--sp-float:0px}25%{--sp-float:-3px}50%{--sp-float:-6px}75%{--sp-float:-3px}100%{--sp-float:0px}}
+.ghost{position:absolute;top:-10px;right:16px;z-index:0;pointer-events:none;user-select:none;
+  font-size:clamp(62px,7vw,102px);line-height:1;font-weight:400;letter-spacing:-.05em;
+  color:rgba(243,181,71,.055);font-variant-numeric:tabular-nums}
+
+/* ------------------------------------------------------------- timeline */
+.tl__head{grid-column:1/span 7}
+.tl__ctrl{grid-column:9/span 4;align-self:end;display:flex;flex-direction:column;gap:1rem}
+@media (max-width:1000px){.tl__head,.tl__ctrl{grid-column:1/-1}.tl__ctrl{margin-top:2rem}}
+
+.switch{position:relative;display:inline-flex;padding:4px;border:1px solid var(--rule);border-radius:999px;
+  background:rgba(20,24,16,.85);align-self:start;overflow:hidden}
+.switch::before{content:'';position:absolute;top:4px;bottom:4px;left:4px;width:var(--sw,calc(50% - 4px));
+  border-radius:999px;background:var(--gold);box-shadow:0 6px 20px -8px rgba(243,181,71,.9);
+  transform:translateX(var(--swx,0));transition:transform .55s var(--back)}
+.switch button{position:relative;z-index:1;appearance:none;border:0;cursor:pointer;background:transparent;
+  color:var(--paper-dim);font:inherit;font-size:.9rem;letter-spacing:-.01em;padding:.55rem 1.2rem;
+  border-radius:999px;transition:color .4s var(--ease);white-space:nowrap;flex:1 0 auto;text-align:center}
+.switch button[aria-pressed="true"]{color:#1B1505;font-weight:500}
+.switch button:hover:not([aria-pressed="true"]){color:var(--paper)}
+
+.legend{display:flex;flex-wrap:wrap;gap:.55rem 1.35rem;font-size:.78rem;color:var(--paper-faint);letter-spacing:.02em}
+.legend span{display:inline-flex;align-items:center;gap:.5rem}
+.legend i{width:20px;height:10px;border-radius:2px;display:inline-block;flex:none}
+.lg-prod{background:linear-gradient(180deg,#606C41,#4E5636)}
+.lg-ad{background:rgba(243,181,71,.14);box-shadow:inset 0 1px 0 var(--gold),inset 0 -1px 0 rgba(243,181,71,.35)}
+.legend i.lg-vs{width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(243,181,71,.2)}
+.legend i.lg-nb{width:2px;height:13px;background:var(--paper-faint);border-radius:1px}
+
+.tl__wrapper{grid-column:1/-1;position:relative}
+.tl__hint{display:none;align-items:center;gap:.5rem;margin:1.4rem 0 -1.2rem;
+  font-size:.6875rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.tl__hint i{width:26px;height:1px;background:linear-gradient(90deg,var(--gold),transparent);
+  animation:hintSlide 2.4s var(--ease) infinite}
+@keyframes hintSlide{0%,100%{transform:translateX(0);opacity:.45}50%{transform:translateX(7px);opacity:1}}
+@media (max-width:1010px){
+  .tl__hint{display:inline-flex}
+  .tl__wrapper::after{content:'';position:absolute;top:3.6rem;bottom:1rem;right:0;width:44px;z-index:2;
+    pointer-events:none;background:linear-gradient(270deg,var(--ink),transparent)}
+}
+.tl__scroll{margin-top:clamp(2.5rem,6vh,4.5rem);overflow-x:auto;overflow-y:hidden;
+  padding-bottom:1rem;scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.tl__scroll::-webkit-scrollbar{height:6px}
+.tl__scroll::-webkit-scrollbar-thumb{background:var(--rule);border-radius:3px}
+.tl{position:relative;min-width:1010px}
+.tl__months{display:flex;border-bottom:1px solid var(--rule-soft);padding-bottom:.5rem;margin-bottom:.9rem}
+.tl__months span{font-size:.6875rem;letter-spacing:.18em;text-transform:uppercase;color:var(--paper-faint);
+  border-left:1px solid var(--rule-soft);padding-left:.5rem;flex:none}
+.tl__months span:first-child{border-left:0;padding-left:0}
+.tl__track{position:relative;height:210px}
+.tl__grid{position:absolute;inset:0;display:flex;pointer-events:none}
+.tl__grid i{flex:1 0 auto;border-left:1px solid rgba(44,51,32,.45)}
+
+.camp{position:absolute;top:26px;height:104px;border:0;background:transparent;padding:0;cursor:pointer;
+  text-align:left;color:inherit;font:inherit;transition:opacity .55s var(--ease)}
+.camp__bars{position:absolute;left:0;right:0;top:32px;height:32px;
+  clip-path:inset(0 100% 0 0);transition:clip-path 1.1s var(--ease)}
+.tl.lit .camp__bars{clip-path:inset(0 0 0 0)}
+.camp:nth-child(2) .camp__bars{transition-delay:.07s}
+.camp:nth-child(3) .camp__bars{transition-delay:.14s}
+.camp:nth-child(4) .camp__bars{transition-delay:.21s}
+.camp:nth-child(5) .camp__bars{transition-delay:.28s}
+.camp:nth-child(6) .camp__bars{transition-delay:.35s}
+.camp:nth-child(7) .camp__bars{transition-delay:.42s}
+.camp:nth-child(8) .camp__bars{transition-delay:.49s}
+.camp__prod{position:absolute;left:0;top:0;height:32px;background:linear-gradient(180deg,#606C41,#4E5636);
+  border-radius:3px 0 0 3px;box-shadow:inset 0 1px 0 rgba(236,234,223,.16);transition:background .4s var(--ease)}
+.camp__ad{position:absolute;top:0;height:32px;border-radius:0 3px 3px 0;overflow:hidden;
+  background:rgba(243,181,71,.14);
+  box-shadow:inset 0 1px 0 var(--gold),inset -1px 0 0 rgba(243,181,71,.5),inset 0 -1px 0 rgba(243,181,71,.32);
+  transition:background .4s var(--ease)}
+.camp__ad::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(115deg,transparent 40%,rgba(251,217,143,.3) 50%,transparent 60%);
+  background-size:280% 100%;background-position:150% 0;animation:adSheen 7s var(--ease) infinite}
+@keyframes adSheen{0%,62%{background-position:150% 0}96%,100%{background-position:-60% 0}}
+.camp__dot{position:absolute;top:43px;width:11px;height:11px;border-radius:50%;background:var(--gold);
+  box-shadow:0 0 0 3px var(--ink),0 0 0 5px rgba(243,181,71,.26);z-index:2;opacity:0;
+  transition:box-shadow .4s var(--ease),opacity .6s var(--ease) .6s}
+.tl.lit .camp__dot{opacity:1;animation:dotPulse 3.4s var(--ease) infinite}
+@keyframes dotPulse{0%,100%{box-shadow:0 0 0 3px var(--ink),0 0 0 5px rgba(243,181,71,.26)}
+  50%{box-shadow:0 0 0 3px var(--ink),0 0 0 9px rgba(243,181,71,.1)}}
+.camp__name{position:absolute;top:2px;left:0;font-size:.8125rem;letter-spacing:-.01em;color:var(--paper);
+  white-space:nowrap;transition:color .4s var(--ease)}
+.camp__wk{position:absolute;top:74px;left:0;font-size:.6875rem;letter-spacing:.06em;color:var(--paper-faint);
+  white-space:nowrap;font-variant-numeric:tabular-nums;transition:color .4s var(--ease)}
+.camp:hover .camp__prod{background:linear-gradient(180deg,#7E8E56,#606C41)}
+.camp:hover .camp__name,.camp:hover .camp__wk{color:var(--gold-soft)}
+.camp.is-sel .camp__name{color:var(--gold);font-weight:500}
+.camp.is-sel .camp__prod{background:linear-gradient(180deg,#7E8E56,#606C41)}
+.camp.is-sel .camp__dot{box-shadow:0 0 0 3px var(--ink),0 0 0 9px rgba(243,181,71,.34)}
+.camp.is-out{opacity:.24}
+.camp.is-out:hover{opacity:.55}
+
+.tl__nb{position:absolute;bottom:2px;left:0;right:0;height:30px}
+.tl__nb i{position:absolute;bottom:14px;width:2px;height:13px;background:var(--paper-faint);border-radius:1px;opacity:.75}
+.tl__nb i::after{content:attr(data-t);position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);
+  font-size:.5625rem;letter-spacing:.14em;text-transform:uppercase;color:var(--paper-faint);white-space:nowrap}
+
+.tl__panel{grid-column:1/-1;margin-top:clamp(1.75rem,4vh,3rem);perspective:1600px}
+.tp{padding:clamp(1.6rem,3.2vw,2.8rem)}
+.tp .grid{row-gap:1.5rem}
+.tp__n{grid-column:1/span 1}
+.tp__main{grid-column:2/span 5}
+.tp__side{grid-column:8/span 5}
+.tp__main h3{margin-bottom:.7rem}
+.tp__when{font-size:.8125rem;letter-spacing:.06em;color:var(--gold);margin:0 0 1rem;font-variant-numeric:tabular-nums}
+@media (max-width:1000px){.tp__n{display:none}.tp__main,.tp__side{grid-column:1/-1}}
+
+/* ----------------------------------------------------------- spec lists */
+.spec{margin:0}
+.spec__row{display:grid;grid-template-columns:minmax(9rem,32%) 1fr;gap:1rem;
+  padding-block:.72rem;border-top:1px solid var(--rule-soft);transition:background .35s var(--ease)}
+.spec__row:last-child{border-bottom:1px solid var(--rule-soft)}
+.spec__row:hover{background:rgba(113,128,77,.07)}
+.spec dt{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--paper-faint);padding-top:.18rem}
+.spec dd{margin:0;color:var(--paper)}
+.spec dd em{color:var(--paper-dim)}
+.spec dd b{color:var(--gold);font-weight:400}
+
+/* ---------------------------------------------------------------- steps */
+.steps{grid-column:1/-1;margin-top:clamp(2.5rem,6vh,4rem);display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1.25rem,2.4vw,2.2rem);perspective:1600px}
+.step{padding:clamp(1.4rem,2.6vw,2.1rem) clamp(1.4rem,2.4vw,1.9rem) clamp(1.6rem,3vw,2.3rem)}
+.step:nth-child(2){animation-delay:-3.7s}
+.step:nth-child(3){animation-delay:-7.4s}
+.step h3{font-size:1.28rem;line-height:1.2;margin:.8rem 0 .6rem}
+.step p{margin:0;color:var(--paper-dim);font-size:.95rem;line-height:1.6}
+@media (max-width:820px){.steps{grid-template-columns:1fr;gap:1.4rem;perspective:none}}
+
+/* --------------------------------------------------------------- format */
+.fmt{grid-column:1/-1;margin-top:clamp(2.5rem,6vh,4rem);display:grid;
+  grid-template-columns:1.62fr 1fr;gap:clamp(1.5rem,3.4vw,3.5rem);align-items:end;perspective:1700px}
+.frame{position:relative;--sp-float:0px;--sp-hover:0px;
+  transform:rotateY(var(--sp-ry,0deg)) rotateX(var(--sp-rx,0deg)) translate3d(0,calc(var(--sp-float) + var(--sp-hover)),0);
+  animation:spFloat 13s cubic-bezier(.45,.05,.55,.95) infinite;transform-style:preserve-3d;will-change:transform;
+  transition:--sp-hover .55s var(--ease),--sp-rx .5s var(--ease),--sp-ry .5s var(--ease)}
+.frame:hover{--sp-hover:-7px}
+.frame--tall{animation-delay:-5s}
+.frame figcaption{padding-top:.9rem}
+.frame__shell{position:relative;overflow:hidden;border-radius:4px;
+  box-shadow:0 30px 70px rgba(0,0,0,.55),0 10px 22px rgba(0,0,0,.4)}
+.frame__shell::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:2;
+  background:linear-gradient(115deg,transparent 42%,rgba(251,217,143,.14) 50%,transparent 58%);
+  background-size:260% 100%;background-position:140% 0;animation:adSheen 8.5s var(--ease) infinite}
+.frame--wide .frame__shell img{aspect-ratio:16/9;object-fit:cover}
+.frame--tall{max-width:294px;justify-self:start}
+.frame--tall .frame__shell{border-radius:16px}
+.frame--tall .frame__shell img{aspect-ratio:9/16;object-fit:cover}
+.frame__tag{position:absolute;top:.8rem;left:.8rem;z-index:3;background:rgba(14,17,9,.74);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(236,234,223,.14);
+  border-radius:999px;padding:.3rem .78rem;font-size:.6875rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+@media (max-width:820px){.fmt{grid-template-columns:1fr;perspective:none}}
+
+/* --------------------------------------------------------------- mockup */
+.mock{grid-column:1/-1;margin-top:clamp(2.5rem,6vh,4rem);perspective:2000px}
+.browser{border:1px solid var(--rule);border-radius:9px;overflow:hidden;background:#fff;
+  box-shadow:0 50px 110px -40px rgba(0,0,0,.8),0 18px 40px rgba(0,0,0,.45);
+  --sp-float:0px;--sp-hover:0px;transform-style:preserve-3d;
+  transform:rotateY(var(--sp-ry,0deg)) rotateX(var(--sp-rx,0deg)) translate3d(0,calc(var(--sp-float) + var(--sp-hover)),0);
+  animation:spFloat 15s cubic-bezier(.45,.05,.55,.95) infinite;will-change:transform;
+  transition:--sp-hover .55s var(--ease),--sp-rx .5s var(--ease),--sp-ry .5s var(--ease)}
+.browser:hover{--sp-hover:-6px}
+.browser__bar{display:flex;align-items:center;gap:.5rem;padding:.6rem .85rem;background:#EFEFE9;border-bottom:1px solid #DCDCD2}
+.browser__bar i{width:9px;height:9px;border-radius:50%;background:#CFCFC4;flex:none}
+.browser__url{margin-left:.6rem;font-size:.75rem;color:#7C7C6E;background:#fff;border-radius:999px;
+  padding:.2rem .8rem;border:1px solid #DCDCD2}
+.gj{font-family:'Familjen',system-ui,sans-serif;color:#493d36;background:#fff}
+.gj__sub{background:#4e5636;color:#fff;font-size:.72rem;padding:.5rem 1.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.gj__main{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:.9rem 1.4rem}
+.gj__main img{width:96px}
+.gj__nav{display:flex;gap:1.1rem;font-size:.78rem;font-weight:500;color:#493d36;flex-wrap:wrap}
+.gj__hero{position:relative;aspect-ratio:16/9;overflow:hidden}
+.gj__hero>img{width:100%;height:100%;object-fit:cover}
+.gj__panel{position:absolute;left:0;bottom:0;top:0;width:32%;background:rgba(78,86,54,.7);color:#fff;display:flex;align-items:flex-end}
+.gj__panel div{padding:clamp(.9rem,2.2vw,2rem)}
+.gj__panel h4{margin:0 0 .5rem;font-size:clamp(1rem,2.1vw,1.7rem);line-height:1.1;font-weight:700;letter-spacing:-.02em;color:#fff}
+.gj__panel p{margin:0;font-size:clamp(.66rem,1.05vw,.86rem);line-height:1.34;color:#fff;opacity:.96}
+.gj__btn{display:inline-block;margin-top:.8rem;background:#f3b547;color:#493d36;border-radius:30px;
+  padding:.5rem 1.6rem;font-size:clamp(.66rem,1vw,.82rem);font-weight:600;white-space:nowrap}
+.gj__dots{display:flex;justify-content:flex-end;gap:7px;padding:.7rem 1.4rem}
+.gj__dots i{width:70px;height:4px;border-radius:2px;background:rgba(0,0,0,.12)}
+.gj__dots i:first-child{background:rgba(78,86,54,.55)}
+@media (max-width:700px){.gj__panel{width:52%}.gj__nav{display:none}.mock{perspective:none}}
+
+/* -------------------------------------------------------------- numbers */
+.reach{grid-column:1/-1;margin-top:clamp(2.5rem,6vh,4rem);display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1.25rem,2.4vw,2.2rem);perspective:1600px}
+.stat{padding:clamp(1.4rem,2.6vw,2.1rem)}
+.stat:nth-child(2){animation-delay:-4.2s}
+.stat:nth-child(3){animation-delay:-8.4s}
+.stat b{display:block;font-size:clamp(2rem,4.4vw,3.4rem);font-weight:400;letter-spacing:-.04em;line-height:1;
+  color:var(--gold);font-variant-numeric:tabular-nums}
+.stat p{margin:.7rem 0 0;font-size:.9rem;color:var(--paper-dim);line-height:1.5}
+@media (max-width:700px){.reach{grid-template-columns:1fr;gap:1.4rem;perspective:none}}
+
+/* ==================================================== PRISER (canonical) */
+.pricing{position:relative;overflow:hidden}
+.pricing .pr-orb{position:absolute;border-radius:50%;filter:blur(110px);pointer-events:none;z-index:0}
+.pr-orb-1{width:480px;height:480px;background:radial-gradient(circle,rgba(243,181,71,.13),transparent 70%);
+  top:-140px;right:-90px;animation:orbA 26s ease-in-out infinite}
+.pr-orb-2{width:440px;height:440px;background:radial-gradient(circle,rgba(243,181,71,.15),transparent 70%);
+  top:34%;left:54%;animation:orbB 24s ease-in-out infinite;animation-delay:-8s}
+.pricing .wrap{position:relative;z-index:1}
+.pk{grid-column:1/-1;margin-top:clamp(2.75rem,6vh,4.5rem);display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1.5rem,2.6vw,2.4rem);
+  perspective:1800px;perspective-origin:50% 45%;max-width:1020px;margin-left:auto;margin-right:auto}
+.pkg-col{
+  --pb-rot:0deg;--pb-float:0px;--pb-hover:0px;--pb-scale:1;--pb-entry:0px;
+  display:flex;flex-direction:column;transform-style:preserve-3d;transform-origin:50% 55%;cursor:pointer;
+  transform:rotateY(var(--pb-rot)) translate3d(0,calc(var(--pb-float) + var(--pb-hover) + var(--pb-entry)),0) scale(var(--pb-scale));
+  animation:pbFloat 16s cubic-bezier(.45,.05,.55,.95) infinite;will-change:transform;
+  transition:--pb-hover .55s var(--ease),--pb-rot .65s var(--ease),--pb-entry .9s var(--ease),
+             --pb-scale .6s var(--ease),opacity .8s var(--ease)}
+@keyframes pbFloat{0%{--pb-float:0px}25%{--pb-float:-2.5px}50%{--pb-float:-5px}75%{--pb-float:-2.5px}100%{--pb-float:0px}}
+.pk>.pkg-col:first-child{--pb-rot:calc(11deg * var(--pr-damp,1));animation-delay:-3s;animation-duration:15.2s}
+.pk>.pkg-col:last-child{--pb-rot:calc(-11deg * var(--pr-damp,1));animation-delay:0s;animation-duration:16.6s}
+.pk>.pkg-col:not(.featured){--pb-scale:.92}
+.pk>.pkg-col.featured{--pb-scale:1;z-index:2}
+.pkg-col:hover{--pb-rot:0deg!important;--pb-hover:-9px}
+@media(min-width:901px){
+  .loaded .pk>.pkg-col.rv:not(.in):first-child{--pb-rot:26deg;--pb-entry:26px}
+  .loaded .pk>.pkg-col.rv:not(.in):last-child{--pb-rot:-26deg;--pb-entry:26px}
+}
+.price-box{position:relative;border:1px solid rgba(243,181,71,.2);border-top:2px solid rgba(243,181,71,.42);
+  border-radius:22px;padding:clamp(2.4rem,4vw,3rem) clamp(1.5rem,2.6vw,2.5rem) clamp(2rem,3.4vw,2.75rem);
+  text-align:left;overflow:visible;transform-style:preserve-3d;
+  background:linear-gradient(145deg,rgba(243,181,71,.07) 0%,rgba(113,128,77,.05) 55%,rgba(243,181,71,.045) 100%),rgba(20,24,16,.72);
+  box-shadow:0 50px 120px rgba(0,0,0,.7),0 22px 44px rgba(0,0,0,.5),0 8px 16px rgba(0,0,0,.38),
+             0 0 60px rgba(243,181,71,.05),inset 0 1px 0 rgba(255,255,255,.06);
+  transition:border-color .4s,box-shadow .4s var(--ease),background .5s var(--ease)}
+.price-box::before{content:'';position:absolute;inset:0;border-radius:22px;pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse 120% 60% at 50% -10%,rgba(251,217,143,.12),transparent 55%),
+             radial-gradient(circle at 50% 0%,rgba(243,181,71,.09),transparent 70%);
+  opacity:.7;transition:opacity .4s}
+.price-box:hover::before{opacity:1}
+.price-box>*{position:relative;z-index:1}
+.pkg-col:hover .price-box{border-color:rgba(243,181,71,.45);
+  box-shadow:0 40px 90px rgba(0,0,0,.55),0 14px 28px rgba(0,0,0,.38),inset 0 1px 0 rgba(255,255,255,.1)}
+.price-box.featured{border-color:rgba(243,181,71,.5);border-top:0;
+  background:linear-gradient(145deg,rgba(243,181,71,.11) 0%,rgba(113,128,77,.06) 55%,rgba(243,181,71,.08) 100%),rgba(20,24,16,.74);
+  box-shadow:0 60px 140px rgba(0,0,0,.78),0 26px 52px rgba(0,0,0,.55),0 10px 22px rgba(0,0,0,.42),
+             0 0 90px rgba(243,181,71,.13),inset 0 1px 0 rgba(255,255,255,.08)}
+.price-box.featured::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:22px 22px 0 0;
+  background:linear-gradient(90deg,transparent,var(--gold) 30%,var(--gold-soft) 50%,var(--gold) 70%,transparent)}
+.pr-sheen{position:absolute;inset:0;border-radius:22px;pointer-events:none;z-index:2;
+  background:linear-gradient(115deg,transparent 42%,rgba(251,217,143,.075) 50%,transparent 58%);
+  background-size:260% 100%;background-position:130% 0;animation:prSheen 9s var(--ease) infinite}
+@keyframes prSheen{0%,55%{background-position:130% 0}90%,100%{background-position:-30% 0}}
+.pr-bg{position:absolute;top:-14px;right:14px;z-index:0;pointer-events:none;user-select:none;
+  font-size:96px;line-height:1;font-weight:400;letter-spacing:-.05em;color:rgba(243,181,71,.05);
+  font-variant-numeric:tabular-nums}
+.price-ribbon{position:absolute;top:0;left:50%;transform:translateX(-50%);background:var(--gold);color:#1B1505;
+  font-size:.625rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;padding:.38rem 1rem;
+  border-radius:0 0 10px 10px;z-index:3;white-space:nowrap;overflow:hidden}
+.price-ribbon::after{content:'';position:absolute;top:0;bottom:0;left:0;width:40%;
+  background:linear-gradient(105deg,transparent,rgba(255,255,255,.4),transparent);
+  transform:translateX(-120%);animation:ribSweep 7s var(--ease) infinite}
+@keyframes ribSweep{0%,80%{transform:translateX(-120%)}100%{transform:translateX(320%)}}
+.loaded .price-ribbon{transform:translate(-50%,-100%);opacity:0;
+  transition:transform .6s var(--back) .15s,opacity .3s ease .15s}
+.loaded .pkg-col.in .price-ribbon{transform:translate(-50%,0);opacity:1}
+.price-title{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--paper-faint);margin:0}
+.featured .price-title{margin-top:.9rem}
+.price-name{font-size:clamp(1.4rem,2.4vw,1.95rem);line-height:1.1;letter-spacing:-.03em;margin:.55rem 0 1.3rem;font-weight:400}
+/* motroterad prisplatta — siffran vägrar luta med kortet */
+.price-plate{background:rgba(0,0,0,.3);border:1px solid rgba(243,181,71,.16);border-radius:16px;
+  padding:1.25rem 1.35rem;margin:0 -.35rem;
+  box-shadow:0 12px 32px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.05);
+  transform:rotateY(calc(var(--pb-rot,0deg) * -.5)) translateZ(14px)}
+.price-lbl{font-size:.625rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin:0 0 .55rem}
+.price-orig{position:relative;display:inline-block;font-size:.9375rem;font-weight:300;
+  color:rgba(236,234,223,.5);margin-bottom:.35rem;letter-spacing:.02em;font-variant-numeric:tabular-nums}
+.price-orig::after{content:'';position:absolute;left:0;top:54%;width:100%;height:1.5px;background:rgba(243,181,71,.62);
+  transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease) .45s}
+.pkg-col.in .price-orig::after{transform:scaleX(1)}
+.price-total{font-size:clamp(2.1rem,4.3vw,3.3rem);line-height:1;letter-spacing:-.045em;color:var(--paper);
+  font-variant-numeric:tabular-nums;display:block}
+.price-unit{display:block;margin-top:.55rem;font-size:.8125rem;font-weight:300;color:rgba(236,234,223,.62);letter-spacing:.03em}
+.price-per{margin:.9rem 0 0;font-size:.8125rem;color:var(--paper-dim);font-variant-numeric:tabular-nums;line-height:1.55}
+.price-includes{margin:1.6rem 0 0;padding:0;list-style:none}
+.pi{position:relative;padding:.62rem 0 .62rem 1.55rem;border-top:1px solid rgba(255,255,255,.05);
+  font-size:.9375rem;line-height:1.5;color:var(--paper-dim);transition:transform .3s var(--ease),color .3s var(--ease)}
+.pi::before{content:"";position:absolute;left:0;top:1.05rem;width:6px;height:6px;border-radius:50%;
+  background:var(--moss-lit);transition:background .3s var(--ease),box-shadow .3s var(--ease)}
+.featured .pi::before{background:var(--gold)}
+.pi:hover{transform:translateX(3px);color:var(--paper)}
+.pi:hover::before{box-shadow:0 0 0 4px rgba(243,181,71,.14)}
+.pi strong{color:var(--paper);font-weight:500}
+.pi b{color:var(--gold);font-weight:400}
+.pkg-col.is-picked .price-box{border-color:rgba(243,181,71,.62);
+  box-shadow:0 50px 120px rgba(0,0,0,.72),0 22px 44px rgba(0,0,0,.5),
+             0 0 0 1px rgba(243,181,71,.34),0 0 70px rgba(243,181,71,.12),inset 0 1px 0 rgba(255,255,255,.09)}
+.pick-tag{position:absolute;top:1.15rem;left:clamp(1.5rem,2.6vw,2.5rem);z-index:3;
+  display:inline-flex;align-items:center;gap:.42rem;font-size:.5625rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--gold);opacity:0;transform:translateY(-4px);
+  transition:opacity .45s var(--ease),transform .45s var(--ease)}
+.pkg-col.is-picked .pick-tag{opacity:1;transform:none}
+.pick-tag::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);
+  box-shadow:0 0 0 3px rgba(243,181,71,.22)}
+.featured .pick-tag{top:2.05rem}
+.pk__note{grid-column:1/-1;margin:clamp(1.75rem,3.5vh,2.6rem) auto 0;font-size:.8375rem;color:var(--paper-faint);
+  max-width:66ch;text-align:center;line-height:1.62}
+.pk__note strong{color:var(--paper);font-weight:500}
+@media (max-width:900px){
+  .pk{grid-template-columns:1fr;perspective:none;max-width:none}
+  .pkg-col,.pk>.pkg-col:first-child,.pk>.pkg-col:last-child{--pb-rot:0deg!important;--pb-scale:1!important;--pb-entry:0px!important}
+  .price-plate{transform:none!important}
+  .pr-sheen{display:none}
+}
+
+/* ----------------------------------------------------------------- fine */
+.fine__head{grid-column:1/span 5}
+.fine__list{grid-column:7/span 6}
+@media (max-width:1000px){.fine__head,.fine__list{grid-column:1/-1}.fine__list{margin-top:2.5rem}}
+.fine__list .spec__row{grid-template-columns:minmax(7rem,26%) 1fr}
+
+/* ------------------------------------------------------------------ cta */
+.cta{position:relative;overflow:hidden}
+.cta__bg{position:absolute;inset:0;overflow:hidden;opacity:.17}
+.cta__bg img{width:100%;height:100%;object-fit:cover;object-position:50% 62%}
+.cta__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--ink),rgba(14,17,9,.5) 45%,var(--ink))}
+.cta__in{position:relative;z-index:2}
+.cta__head{grid-column:1/span 7}
+.cta h2{margin-top:.9rem}
+.cta__btns{grid-column:1/span 7;align-self:start;display:flex;align-items:flex-start;flex-wrap:wrap;gap:.9rem;margin-top:clamp(1.8rem,4vh,2.6rem)}
+.btn{position:relative;display:inline-flex;align-items:center;flex:0 0 auto;gap:.6rem;border-radius:999px;
+  padding:.9rem 1.8rem;font-size:.9375rem;letter-spacing:-.01em;text-decoration:none;overflow:hidden;
+  transition:transform .4s var(--ease),background .4s var(--ease),border-color .4s var(--ease),box-shadow .4s var(--ease)}
+.btn--fill{background:var(--gold);color:#1B1505;font-weight:500;box-shadow:0 14px 34px -14px rgba(243,181,71,.7)}
+.btn--fill::after{content:'';position:absolute;top:0;bottom:0;left:0;width:45%;
+  background:linear-gradient(105deg,transparent,rgba(255,255,255,.45),transparent);
+  transform:translateX(-140%);animation:ribSweep 6s var(--ease) infinite}
+.btn--fill:hover{transform:translateY(-3px);background:var(--gold-soft);box-shadow:0 20px 44px -14px rgba(243,181,71,.85)}
+.btn--ghost{border:1px solid var(--rule);color:var(--paper)}
+.btn--ghost:hover{transform:translateY(-3px);border-color:var(--moss-lit);background:rgba(113,128,77,.1)}
+.sign{grid-column:9/span 4;align-self:end;border-top:1px solid var(--rule-soft);padding-top:1.2rem}
+.sign img{width:104px;opacity:.9;margin-bottom:1rem}
+.sign p{margin:0;font-size:.9375rem;line-height:1.55;color:var(--paper-dim)}
+.sign p b{display:block;color:var(--paper);font-weight:500}
+.sign a{color:var(--paper-dim);text-decoration:none;border-bottom:1px solid var(--rule)}
+.sign a:hover{color:var(--gold)}
+@media (max-width:1000px){.cta__head,.cta__btns,.sign{grid-column:1/-1}.sign{margin-top:3rem}}
+
+footer{padding-block:clamp(2rem,5vh,3.5rem);border-top:1px solid var(--rule-soft)}
+.foot__src{grid-column:1/span 7;margin:0;font-size:.8125rem;color:var(--paper-faint)}
+.foot__mark{grid-column:11/span 2;justify-self:end}
+.foot__mark img{width:74px;opacity:.45}
+@media (max-width:820px){.foot__src{grid-column:1/span 8}}
+
+/* --------------------------------------------------------- section head */
+.sec__head{grid-column:1/span 7}
+.sec__aside{grid-column:9/span 4;align-self:end}
+.sec__list{grid-column:7/span 6;align-self:start}
+@media (max-width:1000px){
+  .sec__head,.sec__aside,.sec__list{grid-column:1/-1}
+  .sec__aside{margin-top:1.8rem}
+  .sec__list{margin-top:2.2rem}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .js .rv,.js .rv-stagger>*,.js .rv-plate{opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}
+  .card,.frame,.browser,.pkg-col,.orb,.pr-orb,.grain,.mq__track,.pr-sheen,.card::before,.frame__shell::after,
+  .camp__ad::after,.price-ribbon::after,.btn--fill::after,.curtain__bar i{animation:none!important}
+  .camp__bars{clip-path:none!important}
+  .camp__dot{opacity:1!important}
+  .loaded .price-ribbon{transform:translate(-50%,0)!important;opacity:1!important}
+}
+</style>
+</head>
+<body>
+
+<div class="curtain" id="curtain" aria-hidden="true">
+  <div class="curtain__in">
+    <img src="assets/img/garda-johan-light.svg" alt="" width="425" height="273">
+    <span class="curtain__x"></span>
+    <img src="assets/img/villasjovik-wordmark.svg" alt="" width="1209" height="668">
+  </div>
+  <div class="curtain__bar"><i></i></div>
+</div>
+
+<div class="atmos" aria-hidden="true">
+  <span class="orb orb-1"></span><span class="orb orb-2"></span><span class="orb orb-3"></span>
+</div>
+<div class="grain" aria-hidden="true"></div>
+
+<div class="rail" aria-hidden="true"><div class="rail__fill"></div><div class="rail__glow"></div></div>
+
+<nav class="snav" id="snav" aria-label="Sidnavigering">
+  <a href="#sec-intro" data-s="sec-intro"><span>Intro</span><i></i></a>
+  <a href="#sec-aret" data-s="sec-aret"><span>Året</span><i></i></a>
+  <a href="#sec-arbete" data-s="sec-arbete"><span>Arbetssättet</span><i></i></a>
+  <a href="#sec-kampanj" data-s="sec-kampanj"><span>Kampanjen</span><i></i></a>
+  <a href="#sec-format" data-s="sec-format"><span>Formaten</span><i></i></a>
+  <a href="#sec-rackvidd" data-s="sec-rackvidd"><span>Räckvidd</span><i></i></a>
+  <a href="#sec-upplagg" data-s="sec-upplagg"><span>Upplägg</span><i></i></a>
+  <a href="#sec-kontakt" data-s="sec-kontakt"><span>Kontakt</span><i></i></a>
+</nav>
+
+<div class="page">
+
+<div class="wrap">
+  <header class="masthead">
+    <img class="gj-logo" src="assets/img/garda-johan-light.svg" alt="Gårda Johan" width="425" height="273">
+    <img class="vs-logo" src="assets/img/villasjovik-wordmark.svg" alt="Villa Sjövik" width="1209" height="668">
+  </header>
+</div>
+
+<!-- =========================================================== hero -->
+<section class="hero" id="sec-intro">
+  <div class="hero__plate">
+    <img src="assets/img/hero-plate.webp" alt="Villa Sjöviks trädgårdssida i kvällsljus, med singelbädd och natursten framför altanen." width="1400" height="1792" fetchpriority="high">
+  </div>
+  <div class="hero__inner wrap">
+    <div class="grid">
+      <h1 class="display rv">Ert årshjul har åtta kampanjer. Jag föreslår att jag fyller dem.</h1>
+      <p class="lead rv">Ni skickade planen för 2026. Det här är förslaget som lägger sig ovanpå den, vecka för vecka.</p>
+      <div class="hero__meta rv">
+        <span class="label">Samarbetsförslag</span>
+        <span class="label">Gårda Johan × Villa Sjövik</span>
+        <span class="label num">Augusti 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================== marquee -->
+<section class="mq" aria-label="Tidigare samarbeten">
+  <div class="mq__track" id="mqTrack">
+    <img src="assets/logos/husqvarna.svg" alt="Husqvarna" height="25">
+    <img src="assets/logos/segway.svg" alt="Segway" height="25">
+    <img src="assets/logos/sioox.png" alt="Sioo:x" height="25">
+    <img src="assets/logos/hillerstorp.png" alt="Hillerstorp" height="25">
+    <img src="assets/logos/jape.svg" alt="JAPE" height="25">
+    <img src="assets/logos/pergolux.png" alt="Pergolux" height="25">
+  </div>
+</section>
+
+<!-- ====================================================== statement -->
+<section class="band tint statement">
+  <div class="wrap"><div class="grid">
+    <div class="voice rv">
+      <p>Tack för Årshjulet. Jag har gått igenom det ordentligt, och det är därför det här förslaget ser ut som det gör.</p>
+      <p>Ni har redan lagt in produktionsveckorna. Tre veckor produktion, tre veckor annons, åtta gånger om året. Strukturen finns alltså — det som saknas i den är materialet.</p>
+      <p>Så jag har lagt mitt förslag ovanpå er egen plan i stället för bredvid den.</p>
+    </div>
+    <div class="sig rv">
+      <p class="label" style="margin:0 0 .6rem">Förslag från</p>
+      <p style="margin:0;font-size:1.0625rem;line-height:1.45">Villa Sjövik<br><span style="color:var(--paper-faint)">194 000 följare · inredning, design, trädgård och styling</span></p>
+    </div>
+  </div></div>
+</section>
+
+<!-- ======================================================= timeline -->
+<section class="band" id="sec-aret">
+  <div class="wrap"><div class="grid">
+    <div class="tl__head">
+      <span class="label eyebrow rv">Ert år, med mig i det</span>
+      <h2 class="h2 rv">Åtta produktområden.<br>Åtta kampanjer.</h2>
+      <div class="prose rv" style="margin-top:1.4rem">
+        <p>Varje kampanj är knuten till ett av era egna produktområden och levereras in i den produktionsvecka ni redan har avsatt för det. När er annonsperiod börjar ligger materialet färdigt.</p>
+        <p>Välj sex eller tolv månader nedan. <strong>Valet följer med genom hela sidan</strong> och räknar om innehåll, annonsbudget och pris. Klicka på en kampanj för detaljerna.</p>
+      </div>
+    </div>
+    <div class="tl__ctrl">
+      <div class="switch rv" id="switch" role="group" aria-label="Välj avtalslängd">
+        <button type="button" data-span="6" aria-pressed="false">Sex månader</button>
+        <button type="button" data-span="12" aria-pressed="true">Tolv månader</button>
+      </div>
+      <div class="legend rv">
+        <span><i class="lg-prod"></i> Er produktionsvecka</span>
+        <span><i class="lg-ad"></i> Er annonsperiod</span>
+        <span><i class="lg-vs"></i> Min leverans</span>
+        <span><i class="lg-nb"></i> Nyhetsbrev</span>
+      </div>
+    </div>
+
+    <div class="tl__wrapper rv">
+      <p class="tl__hint">Svep i sidled <i></i></p>
+      <div class="tl__scroll">
+      <div class="tl" id="tl">
+        <div class="tl__months" id="tlMonths"></div>
+        <div class="tl__track" id="tlTrack">
+          <div class="tl__grid" id="tlGrid" aria-hidden="true"></div>
+          <div class="tl__nb" id="tlNb" aria-hidden="true"></div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="tl__panel rv">
+      <div class="card tp" data-tilt aria-live="polite">
+        <span class="ghost num" id="tpGhost">01</span>
+        <div class="grid">
+          <p class="marginal tp__n num" id="tpN">01</p>
+          <div class="tp__main">
+            <h3 class="h3" id="tpTitle">Belysning</h3>
+            <p class="tp__when num" id="tpWhen"></p>
+            <p class="prose" id="tpBody" style="margin:0"></p>
+          </div>
+          <dl class="spec tp__side" id="tpSpec"></dl>
+        </div>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ========================================================== steps -->
+<section class="band tint" id="sec-arbete">
+  <div class="wrap"><div class="grid">
+    <div class="sec__head">
+      <span class="label eyebrow rv">Så ligger det i er kalender</span>
+      <h2 class="h2 rv">Materialet är klart innan annonsen startar.</h2>
+    </div>
+    <div class="sec__aside rv">
+      <p class="caption" style="margin:0">Ordningen är er egen. Jag lägger mig i produktionsfönstret, inte efter det.</p>
+    </div>
+    <div class="steps rv-stagger">
+      <div class="card step" data-tilt>
+        <span class="ghost num">01</span>
+        <p class="marginal">Steg 01</p>
+        <h3>Fönstret bokas</h3>
+        <p>Fönstren låses mot Årshjulet: vilket produktområde som ligger i vilken vecka. Ni vet i god tid vilken vecka som gäller och vilket material som ska hit.</p>
+      </div>
+      <div class="card step" data-tilt>
+        <span class="ghost num">02</span>
+        <p class="marginal">Steg 02</p>
+        <h3>Jag filmar och levererar</h3>
+        <p>Produkten kommer till Villa Sjövik, byggs in i trädgården på riktigt och filmas i två format. Allt levereras innan era tre produktionsveckor är slut.</p>
+      </div>
+      <div class="card step" data-tilt>
+        <span class="ghost num">03</span>
+        <p class="marginal">Steg 03</p>
+        <h3>Er annonsperiod startar</h3>
+        <p>Ni går ut med färskt material i era egna kanaler, samtidigt som kampanjen publiceras i Villa Sjöviks kanaler. Efteråt kommer rapporten.</p>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ====================================================== kampanjen -->
+<section class="band" id="sec-kampanj">
+  <div class="wrap"><div class="grid">
+    <div class="sec__head">
+      <span class="label eyebrow rv">Innehållet</span>
+      <h2 class="h2 rv">Vad en kampanj är.</h2>
+      <div class="prose rv" style="margin-top:1.4rem">
+        <p>Samma innehåll varje gång, oavsett vilket produktområde som står på tur. Det gör att ni kan planera året utan att förhandla om omfattningen åtta gånger.</p>
+        <p class="caption" style="margin-top:1.2rem">Siffrorna i guld visar totalen i <b class="spanWord" style="color:var(--gold);font-weight:400">tolvmånadersupplägget</b>.</p>
+      </div>
+    </div>
+    <dl class="spec sec__list rv-stagger">
+      <div class="spec__row"><dt>Film</dt><dd>En film byggd på produktområdet, publicerad i Villa Sjöviks kanaler <em>inför 194 000 följare</em> <b>(<span data-tot="film">8</span> totalt)</b></dd></div>
+      <div class="spec__row"><dt>Format</dt><dd>Samma kampanj filmad i 16:9 och 9:16 — det breda för er plattform och hemsida, det stående för Villa Sjövik</dd></div>
+      <div class="spec__row"><dt>Plattformsmaterial</dt><dd>Rörligt kortmaterial i 16:9 klippt för er egen sida och plattform, levererat separat</dd></div>
+      <div class="spec__row"><dt>Stories</dt><dd>Tre separata tillfällen med direktlänk som leder trafiken till er plattform <b>(<span data-tot="stories">24</span> totalt)</b></dd></div>
+      <div class="spec__row"><dt>Bildmaterial</dt><dd>20 miljö- och produktbilder i båda formaten <b>(<span data-tot="bilder">160</span> totalt)</b></dd></div>
+      <div class="spec__row"><dt>Avstämning</dt><dd>Ett visuellt förslag på hur kampanjsektionen kan se ut hos er, innan inspelning</dd></div>
+      <div class="spec__row"><dt>Räckvidd</dt><dd>10 000 kr i annonsbudget läggs bakom kampanjen <b>(<span data-tot="annons">80 000</span> kr totalt)</b></dd></div>
+      <div class="spec__row"><dt>Rapport</dt><dd>Räckvidd, visningar och trafik sammanställt efter varje kampanj</dd></div>
+      <div class="spec__row"><dt>Fakturering</dt><dd>Varje kampanj faktureras för sig, efter genomförd kampanj</dd></div>
+      <div class="spec__row"><dt>Rättigheter</dt><dd>Fri användning i era kanaler: webb, plattform, nyhetsbrev, trycksaker och betald annonsering</dd></div>
+    </dl>
+  </div></div>
+</section>
+
+<!-- ========================================================= format -->
+<section class="band tint" id="sec-format">
+  <div class="wrap"><div class="grid">
+    <div class="sec__head">
+      <span class="label eyebrow rv">Det som är nytt</span>
+      <h2 class="h2 rv">Två format, en inspelning.</h2>
+      <div class="prose rv" style="margin-top:1.4rem">
+        <p>Hittills har allt jag gör varit byggt för ett stående format. För er filmar jag i båda. Den breda versionen är gjord för att ligga i er plattform och på hemsidan, den stående för Villa Sjövik.</p>
+        <p><strong>Det är samma dag, samma ljus och samma trädgård</strong> — men ni får material som är byggt för er sida i stället för nedklippt till den.</p>
+      </div>
+    </div>
+    <div class="sec__aside rv">
+      <p class="caption" style="margin:0">Bilderna nedan är från Villa Sjövik i maj. Singelbädden, natursten och cortenkanten ligger redan här.</p>
+    </div>
+    <div class="fmt rv-stagger">
+      <figure class="frame frame--wide" data-tilt style="margin:0">
+        <div class="frame__shell">
+          <span class="frame__tag">16:9 · plattform &amp; hemsida</span>
+          <img src="assets/img/demo-169.webp" alt="Bred bild av altanen med singelbädd, natursten och plantering i kvällsljus." width="1600" height="900" loading="lazy" decoding="async">
+        </div>
+        <figcaption class="caption">Bredformatet klipps för hero, kategorisidor och den sektion kampanjen bor i.</figcaption>
+      </figure>
+      <figure class="frame frame--tall" data-tilt style="margin:0">
+        <div class="frame__shell">
+          <span class="frame__tag">9:16 · Villa Sjövik</span>
+          <img src="assets/img/demo-916.webp" alt="Stående bild av grusgången längs husfasaden med planterade krukor." width="900" height="1600" loading="lazy" decoding="async">
+        </div>
+        <figcaption class="caption">Det stående formatet är det som publiceras och som stories länkar vidare från.</figcaption>
+      </figure>
+    </div>
+  </div></div>
+</section>
+
+<!-- ========================================================= mockup -->
+<section class="band">
+  <div class="wrap"><div class="grid">
+    <div class="sec__head">
+      <span class="label eyebrow rv">Avstämningen</span>
+      <h2 class="h2 rv">Ni ser det innan jag filmar.</h2>
+      <div class="prose rv" style="margin-top:1.4rem">
+        <p>Inför varje kampanj bygger jag en kopia av er egen sida och lägger in ett förslag på hur kampanjen skulle kunna ligga i den. Ni ser alltså riktningen medan den fortfarande går att ändra, inte när materialet redan är inspelat.</p>
+        <p><strong>Jag rör aldrig er plattform.</strong> Kopian är ett underlag för avstämningen, ingenting annat. Bygget äger ni själva.</p>
+      </div>
+    </div>
+    <div class="sec__aside rv">
+      <p class="caption" style="margin:0">Exemplet nedan är er förstasida med en bild från Villa Sjövik i hero. Allt annat är er egen sida.</p>
+    </div>
+
+    <div class="mock rv-plate">
+      <div class="browser" data-tilt>
+        <div class="browser__bar"><i></i><i></i><i></i><span class="browser__url">gardajohan.se</span></div>
+        <div class="gj">
+          <div class="gj__sub">
+            <span>Behöver du hemleverans? Vi hjälper dig · Stort lager</span>
+            <span>info@gardajohan.se · 031-55 92 00</span>
+          </div>
+          <div class="gj__main">
+            <img src="assets/img/garda-johan.svg" alt="Gårda Johan" width="425" height="273">
+            <nav class="gj__nav"><span>Produkter</span><span>Inspiration</span><span>Utställning</span><span>Kampanjer</span><span>Här beställer du</span><span>Om oss</span></nav>
+          </div>
+          <div class="gj__hero">
+            <img src="assets/img/demo-169.webp" alt="Förslagsbild i Gårda Johans hero: singelbädd och natursten framför en altan i kvällsljus." width="1600" height="900" loading="lazy" decoding="async">
+            <div class="gj__panel"><div>
+              <h4>Dekorsten som bär hela rabatten</h4>
+              <p>Sista lagret är det man ser hela året. Vi visar hur singel, sjösten och kantstöd läggs så att planteringen håller ihop.</p>
+              <span class="gj__btn">Till kampanjen</span>
+            </div></div>
+          </div>
+          <div class="gj__dots"><i></i><i></i><i></i></div>
+        </div>
+      </div>
+      <p class="caption" style="margin:1.1rem 0 0">Illustration av arbetssättet. Rubrik och text är ett exempel, inte ett färdigt förslag.</p>
+    </div>
+  </div></div>
+</section>
+
+<!-- ==================================================== publicering -->
+<section class="band tint" id="sec-rackvidd">
+  <div class="wrap"><div class="grid">
+    <div class="sec__head">
+      <span class="label eyebrow rv">Publiceringen</span>
+      <h2 class="h2 rv">Varje kampanj går ut i Villa Sjöviks kanaler.</h2>
+      <div class="prose rv" style="margin-top:1.4rem">
+        <p>Publiken är svenska och nordiska hemägare med intresse för inredning, design, trädgård och styling. Det är samma människor som står inför att lägga om en uppfart, bygga en mur eller planera en rabatt.</p>
+        <p>Till varje film hör <strong>tre separata story-tillfällen med direktlänk</strong>. De är den del av upplägget som faktiskt flyttar folk vidare till er plattform, och de ligger utspridda så att kampanjen syns mer än en enda dag.</p>
+      </div>
+    </div>
+    <div class="sec__aside rv">
+      <p class="caption" style="margin:0">Siffrorna nedan är utfall från tidigare samarbeten, inte prognoser.</p>
+    </div>
+    <div class="reach rv-stagger">
+      <div class="card stat" data-tilt><b class="num cu" data-to="194000">0</b><p>följare på Villa Sjöviks Instagram och Facebook</p></div>
+      <div class="card stat" data-tilt><b class="num cu" data-to="414000">0</b><p>visningar för Hillerstorp, ett samarbete om utemöbler</p></div>
+      <div class="card stat" data-tilt><b class="num cu" data-to="127000">0</b><p>visningar för Segway, filmat här på plats</p></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ================================================ annons + rapport -->
+<section class="band">
+  <div class="wrap"><div class="grid">
+    <div class="sec__head">
+      <span class="label eyebrow rv">Annonskronorna</span>
+      <h2 class="h2 rv">10 000 kr per kampanj läggs bakom räckvidden.</h2>
+      <div class="prose rv" style="margin-top:1.4rem">
+        <p>Ni sa att det här handlar om att bygga varumärket, inte om att jaga klick. Därför ligger annonsbudgeten inne i priset och används för att få fler att se filmen, inte för att pressa fram en order i slutet av veckan.</p>
+        <p>I <b class="spanWord" style="color:var(--gold);font-weight:400">tolvmånadersupplägget</b> blir det <strong><span data-tot="annons">80 000</span> kr i annonsbudget</strong>, fördelat på <span data-tot="kampanjer">8</span> kampanjer.</p>
+      </div>
+    </div>
+    <dl class="spec sec__list rv-stagger">
+      <div class="spec__row"><dt>Syfte</dt><dd>Räckvidd mot en ny publik, inte konvertering</dd></div>
+      <div class="spec__row"><dt>Ingår</dt><dd>10 000 kr per kampanj, inne i priset <b>(<span data-tot="annons">80 000</span> kr totalt)</b></dd></div>
+      <div class="spec__row"><dt>Rapport</dt><dd>Efter varje kampanj: räckvidd, visningar, sparningar och trafik vidare</dd></div>
+      <div class="spec__row"><dt>Sammanställning</dt><dd>En samlad genomgång vid halvår och vid avtalets slut</dd></div>
+    </dl>
+  </div></div>
+</section>
+
+<!-- ========================================================= priser -->
+<section class="band tint pricing" id="sec-upplagg">
+  <span class="pr-orb pr-orb-1" aria-hidden="true"></span>
+  <span class="pr-orb pr-orb-2" aria-hidden="true"></span>
+  <div class="wrap"><div class="grid">
+    <div class="sec__head">
+      <span class="label eyebrow rv">Två upplägg</span>
+      <h2 class="h2 rv">Sex månader eller tolv.</h2>
+      <div class="prose rv" style="margin-top:1.4rem">
+        <p>Skillnaden är hur många av era åtta produktområden som får en egen kampanj. Tolv månader täcker hela varvet, ett område i taget.</p>
+      </div>
+    </div>
+    <div class="sec__aside rv">
+      <p class="caption" style="margin:0">Alla priser exklusive moms. Annonsbudgeten är inräknad. Varje kampanj faktureras för sig, efter genomförd kampanj.</p>
+    </div>
+
+    <div class="pk">
+      <div class="pkg-col rv" data-span="6">
+        <article class="price-box">
+          <span class="pr-bg num" aria-hidden="true">01</span>
+          <span class="pick-tag">Ert val</span>
+          <p class="price-title">Sex månader</p>
+          <h3 class="price-name">Fyra kampanjer</h3>
+          <div class="price-plate">
+            <p class="price-lbl">Totalt</p>
+            <span class="price-total num">196 000</span>
+            <span class="price-unit">kr · exkl. moms · 4 × 49 000</span>
+          </div>
+          <p class="price-per num">49 000 kr per kampanj · varav 40 000 kr i annonsbudget<br>Faktureras per kampanj, i efterhand</p>
+          <ul class="price-includes">
+            <li class="pi"><strong>Fyra produktområden</strong> ur Årshjulet, ett per kampanjfönster</li>
+            <li class="pi">Fyra filmer publicerade i Villa Sjöviks kanaler <strong>inför 194 000 följare</strong></li>
+            <li class="pi">Fyra kampanjer filmade i <strong>16:9 för plattform och hemsida</strong> och 9:16 för Villa Sjövik</li>
+            <li class="pi"><b>12</b> story-tillfällen med direktlänk till er plattform</li>
+            <li class="pi"><b>80</b> miljö- och produktbilder i båda formaten, fri användning i era kanaler</li>
+            <li class="pi"><b>40 000 kr</b> i annonsbudget bakom räckvidden</li>
+            <li class="pi">Visuellt förslag och rapport vid varje kampanj</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="pkg-col featured rv" data-span="12">
+        <article class="price-box featured">
+          <span class="price-ribbon">Mest värde · Rekommenderat</span>
+          <span class="pr-sheen" aria-hidden="true"></span>
+          <span class="pr-bg num" aria-hidden="true">02</span>
+          <span class="pick-tag">Ert val</span>
+          <p class="price-title">Tolv månader</p>
+          <h3 class="price-name">Åtta kampanjer — hela årshjulet</h3>
+          <div class="price-plate">
+            <p class="price-lbl">Totalt</p>
+            <span class="price-orig num">392 000 kr styckvis</span>
+            <span class="price-total num">360 000</span>
+            <span class="price-unit">kr · exkl. moms · 30 000 kr per månad</span>
+          </div>
+          <p class="price-per num">45 000 kr per kampanj · varav 80 000 kr i annonsbudget<br>Faktureras per kampanj, i efterhand</p>
+          <ul class="price-includes">
+            <li class="pi"><strong>Samtliga åtta produktområden</strong> får en egen kampanj</li>
+            <li class="pi">Åtta filmer publicerade i Villa Sjöviks kanaler <strong>inför 194 000 följare</strong></li>
+            <li class="pi">Åtta kampanjer filmade i <strong>16:9 för plattform och hemsida</strong> och 9:16 för Villa Sjövik</li>
+            <li class="pi"><b>24</b> story-tillfällen med direktlänk till er plattform</li>
+            <li class="pi"><b>160</b> miljö- och produktbilder i båda formaten, fri användning i era kanaler</li>
+            <li class="pi"><b>80 000 kr</b> i annonsbudget bakom räckvidden</li>
+            <li class="pi">Visuellt förslag och rapport vid varje kampanj, plus samlad genomgång vid halvår</li>
+            <li class="pi"><strong>32 000 kr lägre</strong> än samma åtta kampanjer bokade var för sig</li>
+          </ul>
+        </article>
+      </div>
+
+      <p class="pk__note"><strong>Ingenting betalas i förskott.</strong> Varje kampanj faktureras för sig när den är genomförd, så hela beloppet förfaller aldrig på en gång. Enskild kampanj utanför avtal kostar 49 000 kr.</p>
+    </div>
+  </div></div>
+</section>
+
+<!-- ==================================================== så fungerar -->
+<section class="band">
+  <div class="wrap"><div class="grid">
+    <div class="fine__head">
+      <span class="label eyebrow rv">Så fungerar det</span>
+      <h2 class="h2 rv">Platserna i kalendern är era.</h2>
+      <div class="prose rv" style="margin-top:1.4rem">
+        <p>Villa Sjövik är en produktion, inte en byrå med flera team. När fyra eller åtta fönster reserveras för er är det fönster jag tackar nej till andra i. Därför är det kapaciteten som avtalet gäller, och den faktureras enligt plan oavsett om ett enskilt fönster fylls eller inte.</p>
+        <p>I gengäld är den er att styra: <strong>ett fönster per avtalsår får flyttas</strong> till ett senare tillfälle inom avtalstiden, och blir vädret eller sjukdom ett hinder flyttas fönstret utan att något förbrukas.</p>
+        <p><strong>Ingenting betalas i förskott.</strong> Fakturan kommer per kampanj, efter att den är genomförd, så kostnaden fördelas över hela avtalstiden i takt med att materialet levereras.</p>
+      </div>
+    </div>
+    <dl class="spec fine__list rv-stagger">
+      <div class="spec__row"><dt>Avtalstid</dt><dd><span id="fineSpan">Tolv månader</span>, räknat från det första produktionsfönstret</dd></div>
+      <div class="spec__row"><dt>Första fönstret</dt><dd>Belysning, vecka 39–41. Blir varslet för kort startar avtalet på Fyrar i november</dd></div>
+      <div class="spec__row"><dt>Besked per fönster</dt><dd>Bekräftelse och produkt på plats senast två veckor innan produktionsveckan börjar</dd></div>
+      <div class="spec__row"><dt>Material hit</dt><dd>Produkterna levereras till Åkers Styckebruk och stannar kvar här</dd></div>
+      <div class="spec__row"><dt>Flytträtt</dt><dd>Ett fönster per avtalsår får flyttas inom avtalstiden</dd></div>
+      <div class="spec__row"><dt>Väder och sjukdom</dt><dd>Flyttar fönstret utan att det räknas som förbrukat</dd></div>
+      <div class="spec__row"><dt>Rättigheter</dt><dd>Materialet är ert att använda fritt i båda bolagens kanaler, utan tidsgräns</dd></div>
+      <div class="spec__row"><dt>Publicering</dt><dd>Villa Sjövik publicerar samma material i sina egna kanaler</dd></div>
+      <div class="spec__row"><dt>Fakturering</dt><dd>Per kampanj, i efterhand. Inget förskott och ingen samlad faktura</dd></div>
+    </dl>
+  </div></div>
+</section>
+
+<!-- ============================================================ cta -->
+<section class="cta band" id="sec-kontakt">
+  <div class="cta__bg" aria-hidden="true">
+    <img src="assets/img/plate-evening.webp" alt="" width="1200" height="1600" loading="lazy" decoding="async">
+  </div>
+  <div class="wrap cta__in"><div class="grid">
+    <div class="cta__head">
+      <span class="label rv">Vad händer härnäst?</span>
+      <h2 class="h2 rv">Vi bokar in<br><em class="soft">ett möte.</em></h2>
+    </div>
+    <div class="cta__btns rv">
+      <a class="btn btn--fill" href="mailto:carin@villasjovik.se?subject=G%C3%A5rda%20Johan%20%C3%97%20Villa%20Sj%C3%B6vik%20%E2%80%94%20samarbete%20%C3%B6ver%20tid">Skicka mail →</a>
+      <a class="btn btn--ghost" href="#sec-aret">Se årshjulet igen</a>
+    </div>
+    <div class="sign rv">
+      <img src="assets/img/villasjovik-wordmark.svg" alt="Villa Sjövik" width="1209" height="668">
+      <p>
+        <b>Carin Norberg</b>
+        Visual Creator &amp; Designer · Villa Sjövik<br>
+        <a href="mailto:carin@villasjovik.se">carin@villasjovik.se</a><br>
+        070-65 66 596<br>
+        villasjovik.se · @villasjovik
+      </p>
+    </div>
+  </div></div>
+</section>
+
+<footer>
+  <div class="wrap"><div class="grid">
+    <p class="foot__src">Framtaget för Gårda Johan Produkt AB, augusti 2026. Underlaget är ert eget Årshjul 2026.</p>
+    <div class="foot__mark"><img src="assets/img/garda-johan-light.svg" alt="Gårda Johan" width="425" height="273"></div>
+  </div></div>
+</footer>
+
+</div><!-- /.page -->
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var FINE   = window.matchMedia('(pointer: fine)').matches;
+  var DESK   = function(){ return window.innerWidth > 900; };
+
+  /* ---------------------------------------------------------- curtain */
+  var curtainDone = false;
+  function lift(){
+    if (curtainDone) return; curtainDone = true;
+    document.getElementById('curtain').classList.add('gone');
+    document.body.classList.add('loaded');
+    document.querySelector('.hero').classList.add('in');
+  }
+  window.addEventListener('load', function(){ setTimeout(lift, reduce ? 0 : 640); });
+  setTimeout(lift, 2600);
+
+  /* ------------------------------------------------------------- data */
+  var SLOTS = 54;
+  var MONTHS = [['Sep 26',0,2],['Okt',2,4],['Nov',6,5],['Dec',11,4],['Jan 27',15,4],['Feb',19,4],
+                ['Mar',23,5],['Apr',28,4],['Maj',32,5],['Jun',37,4],['Jul',41,4],['Aug',45,5],['Sep',50,4]];
+
+  var CAMPS = [
+    { n:'Belysning', prod:0, ad:3, wk:'v39–41 / v42–44 · 2026',
+      when:'Produktion 21 sep – 11 okt 2026 · annons 12 okt – 1 nov',
+      body:'Belysning är det enda i sortimentet som kräver mörker för att visa vad det gör, och er annonsperiod ligger precis när kvällarna blir mörka. Jag filmar i skymning, när armaturerna faktiskt syns arbeta mot fasad, trappa och rabatt.',
+      spec:[['Produktområde','Utomhus spotlights, vägglampor, stående lampor och integrerad belysning'],
+            ['Exempel ur sortimentet','Scope · Evo Down · Halo Up Down Dark · Evo Ground'],
+            ['Miljö','Fasad, altantrappa och rabattkant i skymning'],
+            ['Levereras','Innan produktionsveckorna är slut, vecka 41']] },
+
+    { n:'Fyrar', prod:6, ad:9, wk:'v45–47 / v48–50 · 2026',
+      when:'Produktion 2 – 22 nov 2026 · annons 23 nov – 13 dec',
+      body:'Annonsperioden ligger rakt i julhandeln, och fyren är den produkt i sortimentet som är närmast en present. Den har också minst material bakom sig idag, vilket gör den till kampanjen med störst skillnad mellan före och efter.',
+      spec:[['Produktområde','Trädgårdsfyrar i galvaniserat stål, flera storlekar'],
+            ['Exempel ur sortimentet','Trädgårds-Fyr · Måseskär · Pater Noster'],
+            ['Miljö','Kvällsljus, snö om vädret vill, entré och altan'],
+            ['Levereras','Innan produktionsveckorna är slut, vecka 47']] },
+
+    { n:'Trädgårdsslipers', prod:17, ad:20, wk:'v3–5 / v6–8 · 2027',
+      when:'Produktion 18 jan – 7 feb 2027 · annons 8 – 28 feb',
+      body:'Februarikampanjen möter den som planerar vårens projekt i februari, alltså innan spaden är i marken. Slipers och byggtimmer är det som ritar formen på en trädgård, och det är den formen filmen handlar om.',
+      spec:[['Produktområde','Trädgårdsslipers och byggtimmer, kanter och kantstöd'],
+            ['Exempel ur sortimentet','Trädgårdsslipers Ntr-A'],
+            ['Miljö','Odlingslådor, kant mot gräs, nivåskillnad i trädgården'],
+            ['Levereras','Innan produktionsveckorna är slut, vecka 5']] },
+
+    { n:'Marksten & Plattor', prod:23, ad:26, wk:'v9–11 / v12–14 · 2027',
+      when:'Produktion 1 – 21 mar 2027 · annons 22 mar – 11 apr',
+      body:'Den bredaste kategorin ni har, och den som avgör hur en uteplats upplevs innan något annat hunnit landa. Filmen bygger en yta från grus till färdig plattsättning, i den ordning en villaägare faktiskt gör det.',
+      spec:[['Produktområde','Tumlad och otumlad marksten, plattor och klinker'],
+            ['Exempel ur sortimentet','Troja Antik · Holmegaardssten · Slottssten · Villaplattor'],
+            ['Miljö','Uteplats och gång, från bärlager till lagd yta'],
+            ['Levereras','Innan produktionsveckorna är slut, vecka 11']] },
+
+    { n:'Mur', prod:29, ad:32, wk:'v15–17 / v18–20 · 2027',
+      when:'Produktion 12 apr – 2 maj 2027 · annons 3 – 23 maj',
+      body:'Muren är det som gör en sluttande tomt användbar, och det är ett projekt folk skjuter upp för att de inte ser hur det ska gå till. Här är filmen förklarande snarare än stämningssättande, utan att sluta vara vacker.',
+      spec:[['Produktområde','Betongmur, L-stöd, gabioner och murar i natursten'],
+            ['Exempel ur sortimentet','Villa · Luxor · Windsor · Slottsmur · Megaloc'],
+            ['Miljö','Nivåskillnad mot rabatt, mur som avslutar en yta'],
+            ['Levereras','Innan produktionsveckorna är slut, vecka 17']] },
+
+    { n:'Skiffer', prod:35, ad:38, wk:'v21–23 / v24–26 · 2027',
+      when:'Produktion 24 maj – 13 jun 2027 · annons 14 jun – 4 jul',
+      body:'Skiffer är materialet som ser dyrast ut och som fotograferas sämst i en katalog, eftersom hela poängen är hur ytan bryter ljuset. Det är precis en sådan sak rörlig bild i sommarljus gör bättre än en produktbild.',
+      spec:[['Produktområde','Hällar, sättsteg, plansteg och kallmur'],
+            ['Exempel ur sortimentet','Offerdal Hällar · Oppdal Skiffer · Skiffer Kallmur'],
+            ['Miljö','Trappsteg och gångyta i sommarljus, torrt och vått'],
+            ['Levereras','Innan produktionsveckorna är slut, vecka 23']] },
+
+    { n:'Granit', prod:41, ad:44, wk:'v27–29 / v30–32 · 2027',
+      when:'Produktion 5 – 25 jul 2027 · annons 26 jul – 15 aug',
+      body:'Granit är den del av sortimentet som bär historien tydligast, och Bohusgranit är svenskt på ett sätt som går att berätta. Här ligger också det tydligaste tillfället att låta arvet från 1892 höras.',
+      spec:[['Produktområde','Bohusgranit, portugisisk och indisk granit, kantsten och trappa'],
+            ['Exempel ur sortimentet','Bohus Trappa · Bohus Gatsten · Granit Häll'],
+            ['Miljö','Entré, trappa och infart i högsommarljus'],
+            ['Levereras','Innan produktionsveckorna är slut, vecka 29']] },
+
+    { n:'Dekorsten', prod:47, ad:50, wk:'v33–35 / v36–38 · 2027',
+      when:'Produktion 16 aug – 5 sep 2027 · annons 6 – 26 sep',
+      body:'Det sista lagret är det man ser hela året, och trettio varianter är svårt att välja mellan på en produktsida. Filmen visar skillnaden mellan dem i verklig miljö, i den takt någon faktiskt bestämmer sig.',
+      spec:[['Produktområde','Singel, sjösten, kross, marmor och gårdsgrus'],
+            ['Exempel ur sortimentet','Gårda Johan Mix · Bianco Carrara Tumlad · Svart Diabas'],
+            ['Miljö','Rabatt, gång och gårdsplan mot cortenkant'],
+            ['Levereras','Innan produktionsveckorna är slut, vecka 35']] }
+  ];
+
+  var NB = [[7,'Privat'],[11,'Entrepr.'],[18,'Privat'],[24,'Entrepr.'],[28,'Privat'],
+            [32,'Entrepr.'],[36,'Privat'],[40,'Entrepr.'],[44,'Privat'],[48,'Entrepr.'],[52,'Privat']];
+
+  var pct = function(w){ return (w * 100 / SLOTS) + '%'; };
+  var sv  = function(n){ return n.toLocaleString('sv-SE').replace(/ /g,' '); };
+
+  /* ----------------------------------------------------------- render */
+  var months = document.getElementById('tlMonths'), gridEl = document.getElementById('tlGrid');
+  MONTHS.forEach(function(m){
+    var s = document.createElement('span'); s.textContent = m[0]; s.style.width = pct(m[2]); months.appendChild(s);
+    var i = document.createElement('i'); i.style.flex = '0 0 ' + pct(m[2]); gridEl.appendChild(i);
+  });
+
+  var track = document.getElementById('tlTrack'), buttons = [];
+  CAMPS.forEach(function(c, i){
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'camp';
+    b.setAttribute('aria-label', c.n + ', ' + c.wk);
+    b.style.left = pct(c.prod); b.style.width = pct(6);
+    b.innerHTML =
+      '<span class="camp__name">' + c.n + '</span>' +
+      '<span class="camp__bars">' +
+        '<span class="camp__prod" style="width:50%"></span>' +
+        '<span class="camp__ad" style="left:50%;width:50%"></span>' +
+      '</span>' +
+      '<span class="camp__dot" style="left:calc(50% - 5.5px)"></span>' +
+      '<span class="camp__wk">' + c.wk + '</span>';
+    b.addEventListener('click', function(){ select(i); });
+    track.appendChild(b); buttons.push(b);
+  });
+
+  var nb = document.getElementById('tlNb');
+  NB.forEach(function(n){
+    var i = document.createElement('i'); i.style.left = pct(n[0]); i.setAttribute('data-t', n[1]); nb.appendChild(i);
+  });
+
+  /* marquee: duplicera för sömlös loop */
+  var mq = document.getElementById('mqTrack');
+  mq.innerHTML = mq.innerHTML + mq.innerHTML;
+
+  /* ------------------------------------------------------------ state */
+  var span = 12, sel = 0;
+  var TOT = {
+    6:  { kampanjer:4, film:4, stories:12, bilder:80,  annons:40000, ord:'sexmånadersupplägget',  avtal:'Sex månader' },
+    12: { kampanjer:8, film:8, stories:24, bilder:160, annons:80000, ord:'tolvmånadersupplägget', avtal:'Tolv månader' }
+  };
+  var tpN = document.getElementById('tpN'), tpGhost = document.getElementById('tpGhost'),
+      tpTitle = document.getElementById('tpTitle'), tpWhen = document.getElementById('tpWhen'),
+      tpBody = document.getElementById('tpBody'), tpSpec = document.getElementById('tpSpec');
+  var swEl = document.getElementById('switch');
+  var swBtns = Array.prototype.slice.call(swEl.querySelectorAll('button'));
+
+  function syncSpan(){
+    var t = TOT[span], n = t.kampanjer;
+    document.querySelectorAll('[data-tot]').forEach(function(el){
+      var k = el.getAttribute('data-tot');
+      el.textContent = (k === 'annons') ? sv(t.annons) : t[k];
+    });
+    document.querySelectorAll('.spanWord').forEach(function(el){ el.textContent = t.ord; });
+    var fs = document.getElementById('fineSpan'); if (fs) fs.textContent = t.avtal;
+    buttons.forEach(function(b, i){ b.classList.toggle('is-out', i >= n); });
+
+    /* Rekommendationen (ribbon + featured) sitter fast på tolvmånaderspaketet.
+       Togglen markerar bara vad läsaren tittar på just nu. */
+    document.querySelectorAll('.pkg-col').forEach(function(col){
+      col.classList.toggle('is-picked', parseInt(col.getAttribute('data-span'), 10) === span);
+    });
+
+    swBtns.forEach(function(o){ o.setAttribute('aria-pressed', o.getAttribute('data-span') === String(span) ? 'true' : 'false'); });
+    swEl.style.setProperty('--swx', span === 6 ? '0%' : '100%');
+  }
+
+  function select(i){
+    sel = i;
+    var c = CAMPS[i], nn = ('0' + (i + 1)).slice(-2);
+    tpN.textContent = nn; tpGhost.textContent = nn;
+    tpTitle.textContent = c.n; tpWhen.textContent = c.when; tpBody.textContent = c.body;
+    tpSpec.innerHTML = c.spec.map(function(r){
+      return '<div class="spec__row"><dt>' + r[0] + '</dt><dd>' + r[1] + '</dd></div>';
+    }).join('');
+    buttons.forEach(function(b, k){ b.classList.toggle('is-sel', k === i); });
+  }
+
+  function setSpan(s){
+    if (s === span) return;
+    span = s;
+    if (span === 6 && sel > 3) select(0);
+    syncSpan();
+  }
+
+  swEl.style.setProperty('--sw', 'calc(50% - 4px)');
+  swBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){ setSpan(parseInt(btn.getAttribute('data-span'), 10)); });
+  });
+  document.querySelectorAll('.pkg-col').forEach(function(col){
+    col.addEventListener('click', function(){ setSpan(parseInt(col.getAttribute('data-span'), 10)); });
+  });
+
+  select(0); syncSpan();
+
+  /* --------------------------------------------------------- reveals */
+  var targets = document.querySelectorAll('.rv, .rv-plate, .rv-stagger');
+  if (!('IntersectionObserver' in window) || reduce) {
+    Array.prototype.forEach.call(targets, function(el){ el.classList.add('in'); });
+    document.getElementById('tl').classList.add('lit');
+    document.querySelectorAll('.cu').forEach(function(el){ el.textContent = sv(parseInt(el.getAttribute('data-to'),10)); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    Array.prototype.forEach.call(targets, function(el){ io.observe(el); });
+
+    var tlio = new IntersectionObserver(function(en){
+      en.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('lit'); tlio.unobserve(e.target); } });
+    }, { threshold: 0.2 });
+    tlio.observe(document.getElementById('tl'));
+
+    var cuio = new IntersectionObserver(function(en){
+      en.forEach(function(e){
+        if (!e.isIntersecting) return;
+        cuio.unobserve(e.target);
+        var el = e.target, to = parseInt(el.getAttribute('data-to'), 10), t0 = null, D = 1500;
+        function step(ts){
+          if (!t0) t0 = ts;
+          var p = Math.min(1, (ts - t0) / D), k = 1 - Math.pow(1 - p, 3);
+          el.textContent = sv(Math.round(to * k));
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }, { threshold: .4 });
+    document.querySelectorAll('.cu').forEach(function(el){ cuio.observe(el); });
+  }
+
+  /* ------------------------------------------- muspekar-tilt och glow */
+  if (FINE && !reduce) {
+    document.querySelectorAll('[data-tilt]').forEach(function(card){
+      card.addEventListener('mousemove', function(e){
+        var r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+        if (!DESK()) return;
+        var px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+        card.style.setProperty('--sp-ry', ((px - .5) * 6).toFixed(2) + 'deg');
+        card.style.setProperty('--sp-rx', ((py - .5) * -4).toFixed(2) + 'deg');
+      });
+      card.addEventListener('mouseleave', function(){
+        card.style.setProperty('--sp-ry', '0deg');
+        card.style.setProperty('--sp-rx', '0deg');
+      });
+    });
+  }
+
+  /* ------------------ prisrutorna plattas ut mot läsaren vid scroll */
+  var pk = document.querySelector('.pk');
+  function damp(){
+    if (!pk || reduce) return;
+    var r = pk.getBoundingClientRect(), vh = window.innerHeight;
+    var p = 1 - Math.min(1, Math.max(0, (r.top - vh * .1) / (vh * .85)));
+    pk.style.setProperty('--pr-damp', (1 - p * .45).toFixed(3));
+  }
+
+  /* -------------------------------------------------- rail + sidenav */
+  var rail = document.querySelector('.rail'), ticking = false;
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.snav a'));
+  var secs = navLinks.map(function(a){ return document.getElementById(a.getAttribute('data-s')); });
+
+  function draw(){
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    var p = h > 0 ? Math.min(1, Math.max(0, window.scrollY / h)) : 0;
+    rail.style.setProperty('--p', p.toFixed(4));
+    var mid = window.scrollY + window.innerHeight * .38, act = 0;
+    secs.forEach(function(s, i){ if (s && s.offsetTop <= mid) act = i; });
+    navLinks.forEach(function(a, i){ a.classList.toggle('on', i === act); });
+    damp();
+    ticking = false;
+  }
+  function onScroll(){ if (!ticking) { ticking = true; requestAnimationFrame(draw); } }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  draw();
+})();
+</script>
+</body>
+</html>
